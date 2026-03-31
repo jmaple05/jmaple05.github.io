@@ -1,59 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+            
+            /* VARIABLES */
+            :root {
+                --accent-color: #47ebeb;
+                --background-color: #2a2a31;
+                --text-color: #fff;
+                --text-color-muted: #b9b9b9;
 
-  <head>
-    <style>
-      
-      
-      :root {
-            --accent-color: #47ebeb;
-            --background-color: #2a2a31;
-            --text-color: #fff;
-            --text-color-muted: #b9b9b9;
+                /* spacing */
+                --space-xs: 4px;
+                --space-sm: 8px;
+                --space-md: 16px;
+                --space-lg: 32px;
+                --space-xl: 64px;
+                --space-xxl: 128px;
 
-            /* spacing */
-            --space-xs: 4px;
-            --space-sm: 8px;
-            --space-md: 16px;
-            --space-lg: 32px;
-            --space-xl: 64px;
-            --space-xxl: 128px;
+                /* typography */
+                --font-size-xs: 14px;
+                --font-size-sm: 16px;
+                --font-size-md: 18px;
+                --font-size-lg: 24px;
+                --font-size-xl: 28px;
+                --font-size-xxl: 88px;
+            }
 
-            /* typography */
-            --font-size-xs: 14px;
-            --font-size-sm: 16px;
-            --font-size-md: 18px;
-            --font-size-lg: 24px;
-            --font-size-xl: 28px;
-            --font-size-xxl: 88px;
-        }
+            body {
+            background-color: var(--background-color);
+            font-family: Inter, Arial, sans-serif;
+            margin: 0;
+            padding: 0 20px;
+            color: var(--text-color);
+            }
 
-      body {
-        background-color: var(--background-color);
-        font-family: Inter, Arial, sans-serif;
-        margin: 0;
-        padding: 0 20px;
-        color: var(--text-color);
-      }
-      
-    </style>
-  </head>
+            #page {
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: var(--space-md);
+            }
 
-  <body>
-    <div id="page">
+            header {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            }
 
-      <header>
-        
-      </header>
+            nav {
+            margin-left: auto;
+            }
 
-      <main>
-        <div id="about">
-          <h1>
-            Hi, I'm Jesse.
-          </h1>
+            .logo {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            }
+
+            nav ul {
+                display: flex;
+                gap: 40px;
+                list-style: none;
+                margin: 0;
+            }
+
+            nav ul li a:link,
+            nav ul li a:visited {
+                color: var(--text-color);
+                opacity: 0.7;
+            }
+
+            /* TYPOGRAPHY */
+
+            a:link,
+            a:visited {
+                color: var(--accent-color);
+                text-decoration: none;
+            }
+
+            h1 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-sm);
+            }
+
+            h2 {
+            font-size: var(--font-size-xl);
+            color: var(--accent-color);
+            margin-bottom: var(--space-lg);
+            font-weight: 200;
+            margin-top: var(--space-xl);
+            }
+
+            h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-sm);
+            font-weight: 400;
+            }
+
+            p {
+            font-size: var(--space-xxl);
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-color-muted);
+            margin-bottom: var(--space-md);
+            }
+
+            /* SECTIONS */
+
+            #about {
+                margin-top: var(--space-xxl);
+            }
+
+            #about h1 {
+                font-size: var(--font-size-xxl);
+                margin-bottom: var(--space-sm);
+            }
+
+            #about p {
+                font-size: var(--font-size-xl);
+                font-weight: 200;
+                line-height: 1.4;
+                color: var(--text-color);
+            }
+
+            section {
+                margin-top: var(--space-xxl);
+                margin-bottom: var(--space-xxl);
+            }
+
+            .card {
+                background: linear-gradient(90deg, #35353f 0%, #3d3b3d 50%, #3d3b3e 50%);
+                border-radius: 20px;
+                padding: var(--space-xs) var(--space-lg) var(--space-lg);
+                border: 0.5px solid #484851;
+                margin-bottom: var(--space-lg);
+            }
+
+            .card p {
+                margin: var(--space-xs) 0;
+                font-size: var(--font-size-xs);
+            }
+
+            /* SKILLS */
+
+            #skills p {
+                line-height: 1.8;
+            }
+
+            /* EXPERIENCE */
+
+            #experience .job p.role {
+                font-size: var(--font-size-md);
+            }
+
+            /* RECENT WORK */
+
+            .project {
+                display: grid;
+                grid-template-columns: 2fr 3fr;
+                grid-template-rows: 1fr 3fr;
+                column-gap: var(--space-lg);
+                padding: var(--space-md) var(--space-lg);
+            }
+
+            .project .thumbnail {
+                grid-row: span 2;
+            }
+
+            .project img {
+                width: 80%;
+                margin-top: var(--space-md);
+                border-radius: 14px;
+            }
+
+            .project p a {
+                display: block;
+                margin-top: var(--space-md);
+            }
+
+            /* CONTACT */
+
+            #contact {
+                text-align: center;
+            }
+
+            #contact p {
+                font-size: var(--font-size-lg);
+                font-weight: 200;
+                line-height: 1.4;
+                color: var(--text-color);
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="page">
+
+            <header>
+                <div class="logo">
+                    <a href="/">J.M.</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#portfolio">Recent Work</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+
+                <div id="about">
+                <h1> Hi, I'm Jesse. </h1>
+                <p>
+                    I am a student at Brigham Young University studying Computer Science: Software Engineering emphasis.
+                </p>
+                </div>
+
+                <section id="skills">
+                    <h2>Skills</h2>
+                    <div class="skill card">
+                        <h3>
+                            Front-end Development
+                        </h3>
+                        <p>
+                            &bull; Building html/CSS/Javascript webpages as a present for friends.
+                            <br>
+                            &bull; Building a html/CSS/Javascript webpage for a matrix calculator.
+                        </p>
+                    </div>
+                    <div class="skill card">
+                        <h3>
+                            Back-end Development
+                        </h3>
+                        <p>
+                            &bull; Proficient in Python and C++
+                        </p>
+                    </div>
+                </section>
+
+                <section id="experience">
+                    <!-- <h2>Experience</h2> -->
+                    <div class="education">
+                        <h2>Education</h2>
+
+                        <div class="school card">
+                            <h3>Brigham Young University</h3>
+                            <p class="degree">Bachelor of Science in Computer Science in progress</p>
+                            <p class="timeline">2025-present</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section id="portfolio">
+
+                    <h2>Recent Work</h2>
+                    <div class="project card">
+                        <div class="thumbnail"><a href="https://jmaple05.github.io/Christmas-gift/app.html">
+                            <img src="christmas_tree.png" alt="present">
+                        </a></div>
+                        <h3>Christmas Appreciation Present</h3>
+                        <p>
+                            This is a page that I coded as a Christmas present to express my appreciation to my friends.
+                        </p>
+                    </div>
+                    <div class="project card">
+                        <div class="thumbnail"><a href="">
+                            <img>
+                        </a></div>
+                        <h3>Matrix Calculator</h3>
+                        <p>
+                            This is a program that helps people do calculations on matrices.
+                        </p>
+                    </div>
+
+                </section>
+
+                <section id="contact">
+                    <h2>Get in touch</h2>
+                    <p>
+                        If you would like to discuss a project or contact me, please get in touch with me at 
+                        <a href="mailto:jesse5.maple@gmail.com">jesse5.maple@gmail.com</a>
+                    </p>
+                </section>
+
+            </main>
         </div>
-      </main>
-    </div>
-  </body>
+    </body>
   
 </html>
